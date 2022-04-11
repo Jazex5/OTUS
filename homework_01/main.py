@@ -9,10 +9,10 @@ def power_numbers(*numbers):
     >>> power_numbers(1, 2, 5, 7)
     <<< [1, 4, 25, 49]
     """
-    return (number ** 2 for number in numbers)
+    return [number ** 2 for number in numbers]
 
 
-power_numbers()
+power_numbers(1, 2, 5, 7)
 
 
 
@@ -58,7 +58,7 @@ def is_prime(in_num):
         return False
 
 
-def filter_numbers(*args, t):
+def filter_numbers(args, t):
     """"
       функция, которая на вход принимает список из целых чисел,
       и возвращает только чётные/нечётные/простые числа
@@ -71,13 +71,13 @@ def filter_numbers(*args, t):
       """
     if t is ODD:
         out_filter = filter(filter_odd_num, args)
-        return ("Отфильтрованный список: ", list(out_filter))
+        return list(out_filter)
     elif t is EVEN:
         out_filter = filter(filter_even_num, args)
-        return ("Отфильтрованный список: ", list(out_filter))
+        return list(out_filter)
     elif t is PRIME:
         out_filter = filter(is_prime, args)
-        return ("Отфильтрованный список: ", list(out_filter))
+        return list(out_filter)
 
 
-filter_numbers(2, 3, 4, 5, t=EVEN)
+filter_numbers([2, 3, 4, 5], t=EVEN)
