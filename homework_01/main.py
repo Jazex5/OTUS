@@ -69,13 +69,13 @@ def filter_numbers(args, t):
       >>> filter_numbers([2, 3, 4, 5], EVEN)
       <<< [2, 4]
       """
-    if t is ODD:
+    if t == ODD:
         out_filter = filter(filter_odd_num, args)
         return list(out_filter)
-    elif t is EVEN:
+    elif t == EVEN:
         out_filter = filter(filter_even_num, args)
         return list(out_filter)
-    elif t is PRIME:
+    elif t == PRIME:
         out_filter = filter(is_prime, args)
         return list(out_filter)
 
